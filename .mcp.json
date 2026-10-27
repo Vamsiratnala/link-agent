@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "link-agent": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["tsx", "scripts/mcp-server.ts"],
+      "env": { "NODE_OPTIONS": "--disable-warning=ExperimentalWarning" }
+    }
+  }
+}

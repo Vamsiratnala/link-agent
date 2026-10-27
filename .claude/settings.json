@@ -1,0 +1,13 @@
+{
+  "enabledMcpjsonServers": ["link-agent"],
+  "permissions": {
+    "allow": [
+      "mcp__link-agent__plan",
+      "mcp__link-agent__add_openings",
+      "mcp__link-agent__reject_posts",
+      "mcp__link-agent__finish_run",
+      "mcp__link-agent__openings_needing_drafts",
+      "mcp__link-agent__save_drafts"
+    ]
+  }
+}

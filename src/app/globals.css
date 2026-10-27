@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Tokens follow mobbin.com: neutral greys, translucent surfaces, black/white inverse buttons. */
+:root {
+  --bg: #ffffff;
+  --fg: hsl(0 0% 8%);
+  --fg-2: hsl(0 0% 44%);
+  --fg-3: hsl(0 0% 53%);
+  --surface: hsl(0 0% 25% / 6%);
+  --surface-hover: hsl(0 0% 25% / 10%);
+  --surface-strong: hsl(0 0% 25% / 12%);
+  --line: hsl(0 0% 25% / 8%);
+  --line-strong: hsl(0 0% 25% / 16%);
+  --inverse: hsl(0 0% 8%);
+  --inverse-hover: hsl(0 0% 15%);
+  --on-inverse: #ffffff;
+  --brand: hsl(216 100% 50%);
+  --positive: hsl(142 64% 36%);
+  --positive-bg: hsl(142 64% 36% / 10%);
+  --negative: hsl(0 72% 50%);
+  --negative-bg: hsl(0 72% 50% / 10%);
+  --warning-bg: hsl(45 100% 50% / 16%);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(0 0% 8%);
+    --fg: #ffffff;
+    --fg-2: hsl(0 0% 68%);
+    --fg-3: hsl(0 0% 53%);
+    --surface: hsl(0 0% 100% / 6%);
+    --surface-hover: hsl(0 0% 100% / 10%);
+    --surface-strong: hsl(0 0% 100% / 12%);
+    --line: hsl(0 0% 100% / 8%);
+    --line-strong: hsl(0 0% 100% / 16%);
+    --inverse: #ffffff;
+    --inverse-hover: hsl(0 0% 90%);
+    --on-inverse: hsl(0 0% 8%);
+    --brand: hsl(212 100% 56%);
+    --positive: hsl(142 60% 52%);
+    --positive-bg: hsl(142 60% 52% / 14%);
+    --negative: hsl(0 80% 62%);
+    --negative-bg: hsl(0 80% 62% / 14%);
+    --warning-bg: hsl(45 100% 50% / 14%);
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-fg-3: var(--fg-3);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-strong: var(--surface-strong);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-inverse: var(--inverse);
+  --color-inverse-hover: var(--inverse-hover);
+  --color-on-inverse: var(--on-inverse);
+  --color-brand: var(--brand);
+  --color-positive: var(--positive);
+  --color-positive-bg: var(--positive-bg);
+  --color-negative: var(--negative);
+  --color-negative-bg: var(--negative-bg);
+  --color-warning-bg: var(--warning-bg);
+}
+
+/* Mobbin's type scale. */
+@utility text-title-1 {
+  font-size: 44px;
+  line-height: 48px;
+  font-weight: 650;
+  letter-spacing: -0.4px;
+}
+@utility text-title-2 {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 650;
+}
+@utility text-title-3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 650;
+}
+@utility text-feature {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+}
+@utility text-body {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+}
+@utility text-compact {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+@utility text-caption {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Shared form controls. */
+@utility field {
+  @apply w-full rounded-xl bg-surface px-3.5 py-2.5 text-compact text-fg outline-none ring-1 ring-transparent transition placeholder:text-fg-3 hover:bg-surface-hover focus:bg-bg focus:ring-line-strong;
+}
+@utility label {
+  @apply mb-1.5 block text-compact font-semibold;
+}
+@utility btn {
+  @apply inline-flex h-10 items-center justify-center gap-2 rounded-full px-5 text-compact font-semibold whitespace-nowrap transition disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-inverse text-on-inverse hover:bg-inverse-hover;
+}
+@utility btn-secondary {
+  @apply btn bg-surface text-fg hover:bg-surface-hover;
+}
+@utility chip {
+  @apply inline-flex h-7 items-center gap-1.5 rounded-full bg-surface px-3 text-caption font-semibold text-fg-2;
+}
